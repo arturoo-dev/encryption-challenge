@@ -1,0 +1,83 @@
+/* Logo */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 40px;
+
+position: absolute;
+width: 120px;
+height: 48px;
+left: 40px;
+top: 40px;
+
+
+
+/* Logo */
+
+width: 120px;
+height: 48px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 36.67%;
+right: 37.43%;
+top: 0%;
+bottom: 0%;
+
+/* Dark blue/dark-blue-300 */
+background: #0A3871;
+
+
+/* Menu */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 24px;
+gap: 10px;
+
+display: none;
+width: 120px;
+height: 176px;
+
+background: rgba(255, 255, 255, 0.24);
+border-radius: 800px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Menu */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 24px;
+gap: 10px;
+
+display: none;
+width: 120px;
+height: 176px;
+
+background: rgba(255, 255, 255, 0.24);
+border-radius: 800px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
