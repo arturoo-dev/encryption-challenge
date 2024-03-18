@@ -6,16 +6,15 @@ const btnCopy = document.getElementById("btn-copy");
 const imgPerson = document.getElementById("img-person");
 const messageInfo = document.getElementById("message-info");
 const decrypt = document.getElementById("decrypt");
+let conditions = [
+  ["e", "enter"],
+  ["i", "imes"],
+  ["a", "ai"],
+  ["o", "ober"],
+  ["u", "ufat"],
+];
 
 btnEncrypt.addEventListener("click", () => {
-  let conditions = [
-    ["e", "enter"],
-    ["i", "imes"],
-    ["a", "ai"],
-    ["o", "ober"],
-    ["u", "ufat"],
-  ];
-
   const textEncrypt = toEncrypt.value.toLowerCase();
 
   function encrypt(textEncryptedTemp) {
@@ -37,4 +36,30 @@ btnEncrypt.addEventListener("click", () => {
   btnCopy.style.display = "block";
   decrypt.classList.add("final");
   messageDecrypt.classList.add("final");
+});
+
+btnDecrypt.addEventListener("click", () => {
+  const textDecrypt = toEncrypt.value.toLowerCase();
+
+  function decrypt(textDecryptedTemp) {
+    for (let i = 0; i < conditions.length; i++) {
+      if (textDecryptedTemp.includes(conditions[i][1])) {
+        textDecryptedTemp = textDecryptedTemp.replaceAll(
+          conditions[i][1],
+          conditions[i][0]
+        );
+      }
+    }
+    return textDecryptedTemp;
+  }
+
+  const textDecrypted = decrypt(textDecrypt);
+  messageDecrypt.innerHTML = textDecrypted;
+});
+
+btnCopy.addEventListener("click", () => {
+  let textCopy = messageDecrypt.value;
+  navigator.clipboard.writeText(textCopy);
+  window.confirm("Texto Copiado");
+  toEncrypt.focus();
 });
